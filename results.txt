@@ -1,24 +1,18 @@
 Naive Bayes 
- Accuracy: 0.83672 
+ Accuracy: 0.83776 
  Confusion atrix: 
-[[10891  1609]
- [ 2473 10027]] 
- 
-Random Forest 
- Accuracy: 0.85212 
- Confusion atrix: 
-[[10735  1765]
- [ 1932 10568]] 
+[[10897  1603]
+ [ 2453 10047]] 
  
 Logistic Regression 
- Accuracy: 0.86484 
+ Accuracy: 0.87584 
  Confusion atrix: 
-[[10962  1538]
- [ 1841 10659]] 
+[[10924  1576]
+ [ 1528 10972]] 
  
-Support Vector Machine 
- Accuracy: 0.86648 
+Random Forest 
+ Accuracy: 0.84996 
  Confusion atrix: 
-[[10579  1921]
- [ 1417 11083]] 
+[[10771  1729]
+ [ 2022 10478]] 
  
