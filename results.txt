@@ -11,8 +11,14 @@ Logistic Regression
  [ 1528 10972]] 
  
 Random Forest 
- Accuracy: 0.84996 
+ Accuracy: 0.85392 
  Confusion atrix: 
-[[10771  1729]
- [ 2022 10478]] 
+[[10795  1705]
+ [ 1947 10553]] 
+ 
+Ensembling models 
+ Accuracy: 0.87252 
+ Confusion atrix: 
+[[11014  1486]
+ [ 1701 10799]] 
  

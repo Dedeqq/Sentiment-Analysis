@@ -94,13 +94,24 @@ with open('results.txt', 'a') as file:
     file.write(
         f"""Random Forest \n Accuracy: {str(accuracy_score(y_test, y_predicted))} \n Confusion atrix: \n{str(confusion_matrix(y_test, y_predicted))} \n \n""")
 
+# %% Ensemble mmodels
+print("Ensembling models")
+from sklearn.ensemble import VotingClassifier
+voting_clf = VotingClassifier(estimators=[('n_b', naive_bayes), ('l_r', logreg), ('r_f', forest_clf)],voting='hard')
+voting_clf.fit(X_train, y_train)
+y_predicted = voting_clf.predict(X_test)
+print(accuracy_score(y_test, y_predicted))
+print(confusion_matrix(y_test, y_predicted))
+with open('results.txt', 'a') as file:
+    file.write(
+        f"""Ensembling models \n Accuracy: {str(accuracy_score(y_test, y_predicted))} \n Confusion atrix: \n{str(confusion_matrix(y_test, y_predicted))} \n \n""")
 
 #%% User review
 question=input("Do you want me to check weather your review is positive or negative (y/n)? ")
 while question=="y":
     custom_review=input("Type your review here: ")
     custom_review = text_process(custom_review)
-    if logreg.predict(count_vector.transform([custom_review]))==1:
+    if voting_clf.predict(count_vector.transform([custom_review]))==1:
         print("Your review is positive.")
     else: print("Your review is negative.")
 
